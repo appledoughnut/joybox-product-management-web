@@ -1,0 +1,5 @@
+{
+    "modelPackage": "gen/models",
+    "apiPackage": "gen",
+    "withSeparateModelsAndApi": true
+}
