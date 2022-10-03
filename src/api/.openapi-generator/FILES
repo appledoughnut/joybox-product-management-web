@@ -1,0 +1,13 @@
+.gitignore
+.npmignore
+api.ts
+base.ts
+common.ts
+configuration.ts
+gen/models/add-image-response.ts
+gen/models/index.ts
+gen/models/product.ts
+gen/product-api.ts
+gen/product-image-api.ts
+git_push.sh
+index.ts
