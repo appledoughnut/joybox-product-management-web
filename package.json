@@ -5,6 +5,7 @@
   "scripts": {
     "serve": "vue-cli-service serve",
     "build": "vue-cli-service build",
+    "test": "",
     "openapi": "openapi-generator-cli generate -i $OPENAPI_URL -g typescript-axios -o ./src/api -c ./openapi.json --skip-validate-spec"
   },
   "dependencies": {
