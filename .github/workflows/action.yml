@@ -2,7 +2,11 @@ name: front CI
 
 on:
   pull_request:
-    branches: [ "main" ]
+    branches:
+      - main
+  push:
+    branches:
+      - main
 
 env:
   AWS_REGION: ap-northeast-2
