@@ -2,7 +2,7 @@
   <div class="header-view">
     <div class="left-content">
       <div class="logo" @click="routeToHome">
-        <img alt="logo" class="image" src="@/assets/box.png">
+        <img alt="logo" class="image" src="@/assets/logo.png">
         <div class="name">
           <p>Joybox</p>
         </div>
@@ -55,7 +55,7 @@ export default defineComponent({
     .logo {
       display: flex;
       height: 100%;
-      margin-right: 80px;
+      margin-right: 50px;
       align-items: center;
 
       .image {

@@ -2,21 +2,19 @@
   <div class="login-view">
     <div class="box">
       <label for="email">EmailAddress</label>
-      <InputComponent class="email"
-                      type="email"/>
+      <input class="email" type="email">
       <label for="email">Password</label>
-      <InputComponent class="password"
-                      type="password"/>
-      <button class="login-button" @click="onClickLoginButton">Login</button>
+      <input class="password" type="password">
+      <SimpleButton class="login-button" message="Login" @click="onClickLoginButton"/>
     </div>
   </div>
 </template>
 
 <script>
-import InputComponent from '@/components/InputComponent'
+import SimpleButton from '@/components/SimpleButton'
 export default {
   name: 'LoginView',
-  components: { InputComponent },
+  components: { SimpleButton },
   methods: {
     onClickLoginButton() {
 
@@ -50,18 +48,19 @@ export default {
       color: white;
     }
 
+    input {
+      width: 100%;
+      padding: 16px;
+      box-sizing: border-box;
+      background: #E7F0FE;
+
+      font-size: 20px;
+      border: 0.5px solid grey;
+      outline: none;
+    }
+
     .login-button {
       width: 100%;
-      font-size: 18px;
-      padding: 10px;
-      background: #2c7aff;
-      color: white;
-      border: 0;
-      margin-top: 10px;
-
-      &:hover {
-        cursor: pointer;
-      }
     }
   }
 }
