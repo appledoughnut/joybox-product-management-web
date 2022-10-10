@@ -1,5 +1,5 @@
 <template>
-  <div class="main-frame">
+  <div class="edit-view">
     <div v-for="image in images">
       <img :src="image"/>
     </div>

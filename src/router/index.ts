@@ -1,17 +1,23 @@
 import { createRouter, createWebHistory, RouteRecordRaw } from 'vue-router'
-import MainPage from "@/views/MainPage.vue";
-import EditProduct from "@/views/EditProduct.vue"
+import MainView from "@/views/MainView.vue";
+import EditProductView from "@/views/EditProductView.vue"
+import LoginView from "@/views/LoginView.vue"
 
 const routes: Array<RouteRecordRaw> = [
   {
     path: '/',
     name: 'main',
-    component: MainPage
+    component: MainView
   },
   {
     path: '/edit',
     name: 'edit product',
-    component: EditProduct
+    component: EditProductView
+  },
+  {
+    path: '/login',
+    name: 'login',
+    component: LoginView
   }
 ]
 

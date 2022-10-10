@@ -1,5 +1,5 @@
 <template>
-  <div class="main-frame">
+  <div class="edit-view">
     <label for="title">Title</label>
     <input class="title" type="text" v-model="product.title"/>
     <label for="price">Price</label>
@@ -42,7 +42,7 @@ export default defineComponent({
 
 <style lang="scss" scoped>
 
-.main-frame {
+.edit-view {
   display: flex;
   flex-direction: column;
   align-items: center;
