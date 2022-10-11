@@ -63,7 +63,7 @@ export default defineComponent({
     height: 60%;
     z-index: 1;
 
-    object-fit: cover;
+    object-fit: contain;
     position: absolute;
   }
 

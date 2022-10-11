@@ -1,24 +1,47 @@
 <template>
   <div class="image-collection">
     <div class="container" v-for="(image, index) in images" @click="onClickImage(index)">
-      <img alt="image" :src="image"/>
+      <div class="loading-wrapper" v-if="image.isLoading">
+        <spinner class="spinner"/>
+      </div>
+      <img alt="image" :src="image.src"/>
     </div>
   </div>
-  <ImageSliderView :images="images" :index="selectedImage" v-if="selectedImage !== undefined" @close="onCloseImageView"/>
+  <ImageSliderView :images="imageSrcs"
+                   :index="selectedImage"
+                   v-if="selectedImage !== undefined"
+                   @close="onCloseImageView"/>
 </template>
 
 <script lang="ts">
+
+export class ImageContext {
+  public isLoading = true
+
+  constructor(
+      public readonly src: string,
+      public readonly promise: Promise<any>
+  ) {}
+}
+
 import ImageSliderView from "@/views/ImageSliderView.vue";
 import {defineComponent} from "vue";
+import Spinner from "@/components/Spinner.vue";
+
 export default defineComponent ({
   name: 'ImageCollection',
-  components: {ImageSliderView},
+  components: {Spinner, ImageSliderView},
   props: [
       'images'
   ],
   data() {
     return {
       selectedImage: undefined as number | undefined
+    }
+  },
+  computed: {
+    imageSrcs() {
+      return this.images.map((i: ImageContext) => i.src)
     }
   },
   methods: {
@@ -28,6 +51,16 @@ export default defineComponent ({
     onCloseImageView(): void {
       this.selectedImage = undefined
     }
+  },
+  created() {
+    this.$nextTick(() => {
+      this.images.forEach((image: ImageContext) => {
+        image.promise.then(() => {
+          console.log('timeout')
+          image.isLoading = false
+        })
+      })
+    })
   }
 })
 </script>
@@ -40,6 +73,27 @@ export default defineComponent ({
   overflow: auto;
 
   .container {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    position: relative;
+
+    .loading-wrapper {
+      width: 100%;
+      height: 100%;
+      position: absolute;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      background: #181a21;
+      opacity: 0.5;
+
+      .spinner {
+        width: 45px;
+        height: 45px;
+      }
+    }
+
     img {
       height: 100%;
       object-fit: cover;

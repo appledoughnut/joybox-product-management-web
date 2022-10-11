@@ -1,6 +1,6 @@
 import { createRouter, createWebHistory, RouteRecordRaw } from 'vue-router'
-import MainView from "@/views/MainView.vue";
-import EditProductView from "@/views/EditProductView.vue"
+import MainView from "@/views/ProductsView.vue";
+import EditProductView from "@/views/ProductEditView.vue"
 import LoginView from "@/views/LoginView.vue"
 
 const routes: Array<RouteRecordRaw> = [

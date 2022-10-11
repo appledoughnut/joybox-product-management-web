@@ -1,5 +1,6 @@
 <template>
-  <div class="main-view">
+  <div class="products-view">
+
   </div>
 </template>
 

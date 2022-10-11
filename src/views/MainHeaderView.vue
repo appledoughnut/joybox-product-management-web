@@ -41,7 +41,7 @@ export default defineComponent({
 <style lang="scss" scoped>
 
 .header-view {
-  padding: 10px 10%;
+  padding: 10px 20%;
   height: 50px;
   background: #181a21;
   display: flex;
