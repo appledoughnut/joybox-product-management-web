@@ -1,35 +1,35 @@
 <template>
-  <div class="login-view">
+  <div class="signup-view">
     <div class="box">
       <label for="email">EmailAddress</label>
       <input class="email" type="email">
-      <label for="email">Password</label>
+      <label for="password">Password</label>
       <input class="password" type="password">
-      <SimpleButton class="login-button" message="Login" @click="onClickLogin"/>
-      <SimpleButton class="signup-button" message="Signup" @click="onClickSignup"/>
+      <label for="check-password">Check Password</label>
+      <input class="password" type="password">
+      <SimpleButton class="done-button" message="Done" @click="onClickDone"/>
     </div>
   </div>
 </template>
 
 <script>
 import SimpleButton from '@/components/SimpleButton'
-export default {
-  name: 'LoginView',
+import { defineComponent } from 'vue'
+
+export default defineComponent({
+  name: 'SignupView',
   components: { SimpleButton },
   methods: {
-    onClickLogin() {
+    onClickDone() {
 
-    },
-    onClickSignup() {
-      this.$router.push('/signup')
     }
   }
-}
+})
 </script>
 
 <style lang="scss" scoped>
 
-.login-view {
+.signup-view {
   width: 100%;
   height: 100%;
   display: flex;
@@ -64,16 +64,9 @@ export default {
       outline: none;
     }
 
-    .login-button {
+    .done-button {
       width: 100%;
-    }
-
-    .signup-button {
-      width: 100%;
-      background: #1b2838;
-      border: 1px solid lightgray;
     }
   }
 }
-
 </style>
