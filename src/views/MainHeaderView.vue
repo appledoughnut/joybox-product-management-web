@@ -11,8 +11,13 @@
         <p>Games</p>
       </div>
     </div>
-    <div class="login" @click="routeToLogin" v-if="showLoginButton">
-      <p>Login</p>
+    <div class="right-contents">
+      <div class="add-game" @click="routeToAddGame" v-if="showAddGameButton">
+        <p>Add Game</p>
+      </div>
+      <div class="login" @click="routeToLogin" v-if="showLoginButton">
+        <p>Login</p>
+      </div>
     </div>
   </div>
 </template>
@@ -25,6 +30,9 @@ export default defineComponent({
   computed: {
     showLoginButton() {
       return this.$route.name !== "login"
+    },
+    showAddGameButton() {
+      return this.$route.name !== "login" && this.$route.name !== 'edit product'
     }
   },
   methods: {
@@ -33,6 +41,9 @@ export default defineComponent({
     },
     routeToLogin() {
       this.$router.push('/login')
+    },
+    routeToAddGame() {
+      this.$router.push('/edit')
     }
   }
 })
@@ -93,12 +104,17 @@ export default defineComponent({
     }
   }
 
-  .login {
-    font-size: 21px;
-    color: white;
+  .right-contents {
+    display: flex;
 
-    &:hover {
-      cursor: pointer;
+    div {
+      font-size: 21px;
+      color: white;
+      margin-right: 20px;
+
+      &:hover {
+        cursor: pointer;
+      }
     }
   }
 }

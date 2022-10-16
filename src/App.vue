@@ -1,9 +1,9 @@
 <template>
-  <div class="main">
-    <MainHeader/>
+  <MainHeader/>
+  <div class="content">
     <router-view/>
-    <FooterView/>
   </div>
+  <FooterView/>
 </template>
 
 <style lang="scss">
@@ -19,16 +19,22 @@ html body {
   height: 100%;
   display: flex;
   flex-direction: column;
-}
-
-.main {
-  min-height: 1000px;
-  height: 100%;
   background: #1b2838;
+
+  .content {
+    min-height: 1000px;
+    height: 100%;
+  }
 }
 
 * {
   font-family: serif;
+}
+
+input::-webkit-outer-spin-button,
+input::-webkit-inner-spin-button {
+  -webkit-appearance: none;
+  margin: 0;
 }
 
 </style>

@@ -97,7 +97,7 @@ export default defineComponent({
       box-sizing: border-box;
 
       font-size: 20px;
-      border: 0.5px solid grey;
+      border: 0.2px solid grey;
       outline: none;
       background: #1b2838;
       color: #DDD;
@@ -107,9 +107,8 @@ export default defineComponent({
       margin-top: 12px;
     }
 
-
     textarea {
-      border: 0.5px solid grey;
+      border: 0.2px solid grey;
       padding: 10px;
       font-size: 20px;
       outline: none;

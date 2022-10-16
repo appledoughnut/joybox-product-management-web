@@ -15,8 +15,6 @@ export default {
 .footer-view {
   width: 100%;
   height: 100px;
-
-  margin-top: 200px;
   background: #181a21;
 }
 
