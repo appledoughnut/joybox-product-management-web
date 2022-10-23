@@ -55,7 +55,7 @@ export default defineComponent({
 
     input {
       width: 100%;
-      padding: 16px;
+      padding: 12px;
       box-sizing: border-box;
       background: #E7F0FE;
 

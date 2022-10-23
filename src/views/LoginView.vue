@@ -2,9 +2,9 @@
   <div class="login-view">
     <div class="box">
       <label for="email">EmailAddress</label>
-      <input class="email" type="email">
+      <input v-model="email" class="email" type="email">
       <label for="email">Password</label>
-      <input class="password" type="password">
+      <input v-model="password" class="password" type="password">
       <SimpleButton class="login-button" message="Login" @click="onClickLogin"/>
       <SimpleButton class="signup-button" message="Signup" @click="onClickSignup"/>
     </div>
@@ -13,12 +13,25 @@
 
 <script>
 import SimpleButton from '@/components/SimpleButton'
+import userService from '@/services/user'
+
 export default {
   name: 'LoginView',
   components: { SimpleButton },
+  data() {
+    return {
+      email: '',
+      password: '',
+    }
+  },
   methods: {
     onClickLogin() {
-
+      userService.login({
+        email: this.email,
+        password: this.password
+      })
+          .then(res => console.log(res))
+          .catch(e => console.log(e))
     },
     onClickSignup() {
       this.$router.push('/signup')
@@ -55,7 +68,7 @@ export default {
 
     input {
       width: 100%;
-      padding: 16px;
+      padding: 12px;
       box-sizing: border-box;
       background: #E7F0FE;
 

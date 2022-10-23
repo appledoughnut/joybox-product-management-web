@@ -7,14 +7,11 @@
           <p>Joybox</p>
         </div>
       </div>
-      <div class="header-menus">
-        <p>Games</p>
-      </div>
     </div>
     <div class="right-contents">
-      <div class="login" @click="routeToLogin" v-if="showLoginButton">
-        <p>Login</p>
-      </div>
+<!--      <div class="login" @click="routeToLogin" v-if="showLoginButton">-->
+<!--        <p>Login</p>-->
+<!--      </div>-->
     </div>
   </div>
 </template>
@@ -25,17 +22,11 @@ import {defineComponent} from 'vue'
 export default defineComponent({
   name: 'MainHeader',
   computed: {
-    showLoginButton() {
-      return this.$route.name !== "login" && this.$route.name !== 'signup'
-    },
   },
   methods: {
     routeToHome() {
       this.$router.push('/')
-    },
-    routeToLogin() {
-      this.$router.push('/login')
-    },
+    }
   }
 })
 </script>
