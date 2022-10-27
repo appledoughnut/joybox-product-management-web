@@ -24,7 +24,14 @@ class UserService {
         return axios.post('/users/login', JSON.stringify(request), {
             headers: {
                 'Content-Type': 'application/json'
-            }
+            },
+            withCredentials: true
+        })
+    }
+
+    async getMe(): Promise<boolean> {
+        return axios.get('/users/me', {
+            withCredentials: true
         })
     }
 }

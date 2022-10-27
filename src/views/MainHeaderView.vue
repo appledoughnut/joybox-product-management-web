@@ -18,6 +18,7 @@
 
 <script>
 import {defineComponent} from 'vue'
+import authenticationManager from '@/services/authentication'
 
 export default defineComponent({
   name: 'MainHeader',
@@ -26,6 +27,12 @@ export default defineComponent({
   methods: {
     routeToHome() {
       this.$router.push('/')
+    }
+  },
+  async mounted() {
+    let result = await authenticationManager.authenticate()
+    if (!result) {
+      this.$router.push('/login')
     }
   }
 })
